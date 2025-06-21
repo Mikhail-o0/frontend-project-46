@@ -10,7 +10,7 @@
   "author": "Mikhail Morozov",
   "license": "ISC",
   "bin": {
-    "gendiff": "./commands/gendiff.js"
+    "gendiff": "commands/gendiff.js"
   },
   "dependencies": {
     "commander": "^14.0.0"
