@@ -2,8 +2,7 @@
 
 import { Command } from 'commander';
 import path from 'path';
-import parseFile from '../src/parser.js';
-import genDiff from '../src/converted.js';
+import genDiff from '../src/index.js';
 
 
 const program = new Command();
@@ -16,18 +15,11 @@ program
   .option('-f, --format [type]', 'output format', 'stylish')
   .version('1.0.0')
   .action((filepath1, filepath2, options) => {
-    const resolvedPath1 = path.resolve(process.cwd(), filepath1);
-    const resolvedPath2 = path.resolve(process.cwd(), filepath2);
+    const file1 = path.resolve(process.cwd(), filepath1);
+    const file2 = path.resolve(process.cwd(), filepath2);
 
-    const data1 = parseFile(resolvedPath1);
-    const data2 = parseFile(resolvedPath2);
-
-    const result = genDiff(filepath1, filepath2);
-    console.log(result)
-    
-    console.log('Parsed data from first file:', data1);
-    console.log('Parsed data from second file:', data2);
-    console.log('Format:', options.format);
+    const result = genDiff(file1, file2, options.format);
+    console.log(result);
   });
 
 program.parse();
