@@ -2,7 +2,6 @@ import js from '@eslint/js';
 import globals from 'globals';
 import pluginJsonc from 'eslint-plugin-jsonc';
 import markdownPlugin from '@eslint/markdown';
-import cssPlugin from '@eslint/css';
 import jsoncParser from 'jsonc-eslint-parser';
 
 export default [
@@ -43,13 +42,4 @@ export default [
     files: ['**/*.md'],
     processor: markdownPlugin.processors.markdown
   },
-  {
-    files: ['**/*.css'],
-    languageOptions: {
-      parser: cssPlugin.parser
-    },
-    rules: {
-      ...cssPlugin.configs.recommended.rules
-    }
-  }
 ];
