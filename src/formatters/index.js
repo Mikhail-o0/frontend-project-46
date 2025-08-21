@@ -7,8 +7,8 @@ const formatters = {
 };
 
 const format = (tree, style = 'stylish') => {
-  if (!formatters[style]) {
-    throw new Error(`Unknown format: ${style}`);
+  if (style === 'json') {
+    return JSON.stringify(tree);
   }
   return formatters[style](tree);
 };

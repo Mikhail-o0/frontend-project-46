@@ -14,7 +14,9 @@ test.each([
   ['json', 'stylish', readFixture('expected_file_stylish.txt')],
   ['yaml', 'stylish', readFixture('expected_file_stylish.txt')],
   ['json', 'plain', readFixture('expected_file_plain.txt')],
-  ['yaml', 'plain', readFixture('expected_file_plain.txt')]
+  ['yaml', 'plain', readFixture('expected_file_plain.txt')],
+  ['json', 'json', readFixture('expected_file_json.txt')],
+  ['yaml', 'json', readFixture('expected_file_json.txt')]
 ])('all test gendiff', (extension, format, expected) => {
   expect(genDiff(getFixturePath(`file1.${extension}`), getFixturePath(`file2.${extension}`), format)).toEqual(expected);
 });
