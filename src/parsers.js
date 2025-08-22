@@ -1,21 +1,20 @@
-import fs from 'fs';
-import path from 'path';
+import fs from 'fs'
+import path from 'path'
 import yaml from 'js-yaml'
 
 const parseFile = (filepath) => {
-  
-  const content = fs.readFileSync(filepath, 'utf-8');
-  const extension = path.extname(filepath).toLowerCase();
+  const content = fs.readFileSync(filepath, 'utf-8')
+  const extension = path.extname(filepath).toLowerCase()
 
   switch (extension) {
     case '.json':
-      return JSON.parse(content);
+      return JSON.parse(content)
     case '.yml':
     case '.yaml':
-      return yaml.load(content);
+      return yaml.load(content)
     default:
-      throw new Error(`Unsupported file extension: ${extension}`);
+      throw new Error(`Unsupported file extension: ${extension}`)
   }
-};
+}
 
-export default parseFile;
+export default parseFile

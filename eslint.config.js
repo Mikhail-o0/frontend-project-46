@@ -1,45 +1,29 @@
-import js from '@eslint/js';
-import globals from 'globals';
-import pluginJsonc from 'eslint-plugin-jsonc';
-import markdownPlugin from '@eslint/markdown';
-import jsoncParser from 'jsonc-eslint-parser';
+import globals from 'globals'
+import pluginJs from '@eslint/js'
+import stylistic from '@stylistic/eslint-plugin'
+// import { Linter } from 'eslint'
 
 export default [
+  stylistic.configs.recommended,
+  pluginJs.configs.recommended,
   {
-    files: ['**/*.js', '**/*.mjs'],
+    files: [
+      '**/*.{js,ts,tsx}',
+    ],
+  },
+  {
+    ignores: ['dist/'],
+  },
+  {
     languageOptions: {
-      ecmaVersion: 12,
-      sourceType: 'module',
-      globals: {
-        ...globals.browser,
-        ...globals.node
-      }
+      globals: globals.node,
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: import.meta.dirname,
+      },
     },
     rules: {
-      ...js.configs.recommended.rules,
-      'no-console': 'warn'
-    }
-  },
-  {
-    files: ['bin/*.js'],
-    rules: {
-      'no-console': 'off'
-    }
-  },
-  {
-    files: ['**/*.json', '**/*.jsonc', '**/*.json5'],
-    languageOptions: {
-      parser: jsoncParser
+      '@typescript-eslint/no-unused-vars': 'off',
     },
-    plugins: {
-      jsonc: pluginJsonc
-    },
-    rules: {
-      ...pluginJsonc.configs['recommended-with-json'].rules
-    }
   },
-  {
-    files: ['**/*.md'],
-    processor: markdownPlugin.processors.markdown
-  },
-];
+] // satisfies Linter.Config[]
