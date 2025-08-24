@@ -24,9 +24,11 @@
 
 ## Ссылки на asciinema
 
-https://asciinema.org/a/DkMMrll29PIJMqNibpiHSAzVx
+[![asciicast](https://asciinema.org/a/DkMMrll29PIJMqNibpiHSAzVx.svg)](https://asciinema.org/a/DkMMrll29PIJMqNibpiHSAzVx)
 
-https://asciinema.org/a/Wb7cmLTECJozSaJT3G7HYU66j
 
-https://asciinema.org/a/GHiJHVsgsVGb10H5hCJWjIcPV
+[![asciicast](https://asciinema.org/a/Wb7cmLTECJozSaJT3G7HYU66j.svg)](https://asciinema.org/a/Wb7cmLTECJozSaJT3G7HYU66j)
+
+
+[![asciicast](https://asciinema.org/a/GHiJHVsgsVGb10H5hCJWjIcPV.svg)](https://asciinema.org/a/GHiJHVsgsVGb10H5hCJWjIcPV)
 
