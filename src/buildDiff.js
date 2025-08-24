@@ -1,5 +1,5 @@
 const buildDiff = (obj1, obj2) => {
-  const keys = [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])].sort()
+  const keys = [...new Set([...Object.keys(obj1), ...Object.keys(obj2)])].sort((a, b) => a.localeCompare(b))
 
   return keys.map((key) => {
     if (!Object.hasOwn(obj1, key)) {
