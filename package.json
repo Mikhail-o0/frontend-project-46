@@ -4,7 +4,7 @@
   "description": "[![Actions Status](https://github.com/Mikhail-o0/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/Mikhail-o0/frontend-project-46/actions)",
   "main": "src/index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest"
   },
   "author": "Mikhail Morozov",
   "license": "ISC",
@@ -27,5 +27,12 @@
     "globals": "^16.3.0",
     "jest": "^30.0.5",
     "jsonc-eslint-parser": "^2.4.0"
+  },
+  "jest": {
+    "collectCoverage": true,
+    "coverageReporters": ["lcov", "text-summary"],
+    "coverageDirectory": ".sonar"
   }
 }
+
+
